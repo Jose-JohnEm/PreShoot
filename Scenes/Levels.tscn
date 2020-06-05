@@ -1,0 +1,273 @@
+[gd_scene load_steps=47 format=2]
+
+[ext_resource path="res://Resources/Menu/sky.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Menu/clouds_2.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Menu/clouds_3.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Menu/clouds_1.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Menu/CameraLevels.gd" type="Script" id=5]
+[ext_resource path="res://Resources/Menu/MusicMenu_2.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Resources/Menu/Levels/Board.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Menu/Levels/Grey_bubble1.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Menu/Levels/Orange_bubble1.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Menu/Levels/Grey_bubble4.png" type="Texture" id=10]
+[ext_resource path="res://Resources/Menu/Levels/Orange_bubble7.png" type="Texture" id=11]
+[ext_resource path="res://Resources/Menu/Levels/Grey_bubble6.png" type="Texture" id=12]
+[ext_resource path="res://Resources/Menu/Levels/Orange_bubble5.png" type="Texture" id=13]
+[ext_resource path="res://Resources/Menu/Levels/Endless1.png" type="Texture" id=14]
+[ext_resource path="res://Resources/Menu/Levels/Grey_bubble2.png" type="Texture" id=15]
+[ext_resource path="res://Resources/Menu/Levels/Orange_bubble2.png" type="Texture" id=16]
+[ext_resource path="res://Resources/Menu/Levels/Grey_bubble5.png" type="Texture" id=17]
+[ext_resource path="res://Resources/Music/return.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Resources/Menu/Levels/Grey_bubble3.png" type="Texture" id=19]
+[ext_resource path="res://Resources/Menu/Levels/Grey_bubble8.png" type="Texture" id=20]
+[ext_resource path="res://Resources/Menu/Levels/Grey_bubble9.png" type="Texture" id=21]
+[ext_resource path="res://Resources/Menu/Levels/Grey_bubble10.png" type="Texture" id=22]
+[ext_resource path="res://Resources/Menu/Levels/Orange_bubble3.png" type="Texture" id=23]
+[ext_resource path="res://Resources/Menu/Levels/Orange_bubble4.png" type="Texture" id=24]
+[ext_resource path="res://Resources/Menu/Levels/Endless2.png" type="Texture" id=25]
+[ext_resource path="res://Scripts/Endless/Endless.gd" type="Script" id=26]
+[ext_resource path="res://Resources/Menu/Levels/Grey_bubble7.png" type="Texture" id=27]
+[ext_resource path="res://Scripts/Menu/Levels/level6.gd" type="Script" id=28]
+[ext_resource path="res://Resources/Menu/Levels/Orange_bubble6.png" type="Texture" id=29]
+[ext_resource path="res://Resources/Menu/Levels/Grey_return.png" type="Texture" id=30]
+[ext_resource path="res://Resources/Menu/Levels/Orange_return.png" type="Texture" id=31]
+[ext_resource path="res://Scripts/Menu/Levels/Return.gd" type="Script" id=32]
+[ext_resource path="res://Scripts/Menu/Levels/Level1.gd" type="Script" id=33]
+[ext_resource path="res://Scripts/Menu/Levels/Level2.gd" type="Script" id=34]
+[ext_resource path="res://Scripts/Menu/Levels/Level3.gd" type="Script" id=35]
+[ext_resource path="res://Scripts/Menu/Levels/Level4.gd" type="Script" id=36]
+[ext_resource path="res://Scripts/Menu/Levels/Level5.gd" type="Script" id=37]
+[ext_resource path="res://Resources/Menu/Levels/Orange_bubble10.png" type="Texture" id=38]
+[ext_resource path="res://Resources/Menu/Levels/Orange_bubble8.png" type="Texture" id=39]
+[ext_resource path="res://Resources/Menu/Levels/Orange_bubble9.png" type="Texture" id=40]
+[ext_resource path="res://Scripts/Menu/Levels/level7.gd" type="Script" id=41]
+[ext_resource path="res://Scripts/Menu/Levels/level8.gd" type="Script" id=42]
+[ext_resource path="res://Scripts/Menu/Levels/level10.gd" type="Script" id=43]
+[ext_resource path="res://Scripts/Menu/Levels/level9.gd" type="Script" id=44]
+[ext_resource path="res://Scripts/Menu/save_classic_menu.gd" type="Script" id=45]
+[ext_resource path="res://Scripts/Menu/Progress.gd" type="Script" id=46]
+
+[node name="Levels" type="CanvasLayer"]
+script = ExtResource( 45 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Sky"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Clouds_3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Clouds_3"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Clouds_2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Clouds_2"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Clouds_1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Clouds_1"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="CameraLevels" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 963, 536 )
+scale = Vector2( 1.5, 1.15 )
+texture = ExtResource( 7 )
+
+[node name="MusicLevels" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
+[node name="Level1" type="TextureButton" parent="."]
+margin_left = 373.0
+margin_top = 313.0
+margin_right = 544.0
+margin_bottom = 486.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
+script = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="TextureButton" parent="."]
+margin_left = 613.0
+margin_top = 313.0
+margin_right = 784.0
+margin_bottom = 486.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 16 )
+script = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="TextureButton" parent="."]
+margin_left = 864.0
+margin_top = 314.0
+margin_right = 1035.0
+margin_bottom = 487.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 23 )
+script = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4" type="TextureButton" parent="."]
+margin_left = 1121.0
+margin_top = 310.0
+margin_right = 1292.0
+margin_bottom = 483.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 24 )
+texture_hover = ExtResource( 24 )
+script = ExtResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level5" type="TextureButton" parent="."]
+margin_left = 1378.0
+margin_top = 308.0
+margin_right = 1549.0
+margin_bottom = 481.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 13 )
+script = ExtResource( 37 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level6" type="TextureButton" parent="."]
+margin_left = 376.0
+margin_top = 531.0
+margin_right = 547.0
+margin_bottom = 704.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 29 )
+texture_hover = ExtResource( 29 )
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level7" type="TextureButton" parent="."]
+margin_left = 612.0
+margin_top = 531.0
+margin_right = 783.0
+margin_bottom = 704.0
+texture_normal = ExtResource( 27 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 11 )
+script = ExtResource( 41 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level8" type="TextureButton" parent="."]
+margin_left = 864.0
+margin_top = 531.0
+margin_right = 1035.0
+margin_bottom = 704.0
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 39 )
+texture_hover = ExtResource( 39 )
+script = ExtResource( 42 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level9" type="TextureButton" parent="."]
+margin_left = 1120.0
+margin_top = 531.0
+margin_right = 1291.0
+margin_bottom = 704.0
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 40 )
+texture_hover = ExtResource( 40 )
+script = ExtResource( 44 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level10" type="TextureButton" parent="."]
+margin_left = 1376.0
+margin_top = 531.0
+margin_right = 1547.0
+margin_bottom = 704.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 38 )
+texture_hover = ExtResource( 38 )
+script = ExtResource( 43 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Endless" type="TextureButton" parent="."]
+margin_left = 795.64
+margin_top = 730.676
+margin_right = 1110.64
+margin_bottom = 870.676
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 25 )
+texture_hover = ExtResource( 25 )
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Return" type="TextureButton" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 187.0
+margin_bottom = 189.0
+texture_normal = ExtResource( 30 )
+texture_pressed = ExtResource( 31 )
+texture_hover = ExtResource( 31 )
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+bus = "SFX"
+
+[node name="Progress" type="Node" parent="."]
+script = ExtResource( 46 )
+[connection signal="pressed" from="Level1" to="Level1" method="_on_Level1_pressed"]
+[connection signal="pressed" from="Level2" to="Level2" method="_on_Level2_pressed"]
+[connection signal="pressed" from="Level3" to="Level3" method="_on_Level3_pressed"]
+[connection signal="pressed" from="Level4" to="Level4" method="_on_Level4_pressed"]
+[connection signal="pressed" from="Level5" to="Level5" method="_on_Level5_pressed"]
+[connection signal="pressed" from="Level6" to="Level6" method="_on_Level6_pressed"]
+[connection signal="pressed" from="Level7" to="Level7" method="_on_Level7_pressed"]
+[connection signal="pressed" from="Level8" to="Level8" method="_on_Level8_pressed"]
+[connection signal="pressed" from="Level9" to="Level9" method="_on_Level9_pressed"]
+[connection signal="pressed" from="Level10" to="Level10" method="_on_Level10_pressed"]
+[connection signal="pressed" from="Endless" to="Endless" method="_on_Endless_pressed"]
+[connection signal="pressed" from="Return" to="Return" method="_on_Return_pressed"]

@@ -1,2 +1,5 @@
 # PreShoot
-PreShoot is a mobile game I developped with a team of 4 developpers. The motor engine is Godot
+
+PreShoot is a game devellop by five students.
+
+We use Godot Engine to devellop it.

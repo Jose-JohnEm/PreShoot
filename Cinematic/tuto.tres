@@ -1,0 +1,29 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_local_to_scene = true
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.1, 4.1, 6.6, 10.5, 15.5, 19.5, 26.5, 29.5, 31.5, 39.6, 48.6, 57 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Welcome !", "This game is very easy", "There are arrow keys
+at the bottom right", "Each pression on these
+lasts will be recorded", "But you will not move !", "For this, you have to
+press the SHOOT button
+at the bottom left", "And let watch
+your record...", "Fail !", "In these case (so often)
+you can restart with
+reload button at the top", "Sometimes, the level can
+be long, so we put for you
+a zoom out button at
+the bottom right", "Now try to reach the panel
+right here. Come on i'ts
+very easy (or not)", "" ]
+}

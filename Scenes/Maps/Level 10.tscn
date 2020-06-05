@@ -1,0 +1,151 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Resources/Tileset/BG.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Sub-scenes/crate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player/PLayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Endless/SFX.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Sub-scenes/Target.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/Music/Preshoot_level_2.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Resources/Music/-1 Life.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scripts/Level/save_classic.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Level/CamMap.gd" type="Script" id=9]
+
+[node name="Level 8" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="BG" type="Sprite" parent="."]
+scale = Vector2( 1.45, 1.45 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="BG2" type="Sprite" parent="."]
+position = Vector2( 1450, -3.8147e-06 )
+scale = Vector2( 1.45, 1.45 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Crates" type="Node" parent="."]
+
+[node name="crate" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1771, 462 )
+
+[node name="crate16" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1232, 77 )
+
+[node name="crate17" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1232, 154 )
+
+[node name="crate18" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1232, 231 )
+
+[node name="crate19" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1232, 0 )
+
+[node name="crate3" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1386, 770 )
+
+[node name="crate7" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1078, 1001 )
+
+[node name="crate8" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 462, 770 )
+
+[node name="crate11" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 385, 1001 )
+
+[node name="crate12" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 616, 939 )
+
+[node name="crate14" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 770, 1001 )
+
+[node name="crate15" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 539, 616 )
+
+[node name="crate2" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1001, 231 )
+
+[node name="crate13" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1078, 231 )
+
+[node name="crate22" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1463, 154 )
+
+[node name="crate21" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1540, 154 )
+
+[node name="crate25" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1694, 154 )
+
+[node name="crate24" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1771, 154 )
+
+[node name="crate9" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 770, 539 )
+
+[node name="crate10" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 693, 539 )
+
+[node name="crate5" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 924, 231 )
+
+[node name="crate20" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1386, 154 )
+
+[node name="crate26" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1309, 154 )
+
+[node name="crate27" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1155, 231 )
+
+[node name="crate23" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1617, 154 )
+
+[node name="crate28" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 1232, -77 )
+
+[node name="crate4" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 847, 385 )
+
+[node name="crate6" parent="Crates" instance=ExtResource( 2 )]
+position = Vector2( 308, 847 )
+
+[node name="Sprite" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1467.28, 62.7067 )
+
+[node name="CamPlayer" type="Camera2D" parent="Sprite"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+limit_top = 0
+limit_right = 2070
+limit_bottom = 1080
+editor_draw_limits = true
+
+[node name="SFX" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Level" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 6 )
+autoplay = true
+bus = "Level"
+
+[node name="Fail" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 7 )
+autoplay = true
+bus = "SFX"
+
+[node name="Start position" type="Position2D" parent="."]
+position = Vector2( 1467.28, -3.8147e-06 )
+
+[node name="Target" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1053.19, 160.616 )
+
+[node name="CamMap" type="Camera2D" parent="."]
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 2070
+limit_bottom = 1080
+editor_draw_limits = true
+script = ExtResource( 9 )

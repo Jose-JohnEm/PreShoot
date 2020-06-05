@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Tileset/Wood/png/Object/Sign_1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Endless/Checkpoint.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 25.02
+
+[node name="Checkpoint" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -3.8147e-06, -1.90735e-06 )
+scale = Vector2( 0.861111, 0.842308 )
+texture = ExtResource( 1 )

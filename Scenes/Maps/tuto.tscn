@@ -1,0 +1,159 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Resources/Tileset/BG.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Player/PLayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Music/Preshoot_level_2.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Resources/Music/-1 Life.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/Sub-scenes/crate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/Text_fonts/Lalezar-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Scenes/Sub-scenes/Target.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Level/save_classic.gd" type="Script" id=8]
+[ext_resource path="res://Resources/Music/preshoot_voice.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Cinematic/tuto.tres" type="Animation" id=10]
+[ext_resource path="res://Scripts/Level/Voice.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/Endless/SFX.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/Level/CamMap.gd" type="Script" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[node name="Tuto" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="BG" type="Sprite" parent="."]
+scale = Vector2( 1.45, 1.45 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="BG2" type="Sprite" parent="."]
+position = Vector2( 1450, 7.62939e-06 )
+scale = Vector2( 1.45, 1.45 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Creates" type="Node2D" parent="."]
+
+[node name="crate" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 77, 770 )
+
+[node name="crate2" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 154, 770 )
+
+[node name="crate3" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 231, 770 )
+
+[node name="crate4" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 385, 770 )
+
+[node name="crate21" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 616, 770 )
+
+[node name="crate5" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 308, 770 )
+
+[node name="crate6" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 770, 770 )
+
+[node name="crate10" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 847, 770 )
+
+[node name="crate11" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 924, 770 )
+
+[node name="crate7" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 1001, 770 )
+
+[node name="crate18" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 693, 770 )
+
+[node name="crate8" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 1001, 693 )
+
+[node name="crate9" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 1078, 693 )
+
+[node name="crate12" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 1155, 693 )
+
+[node name="crate13" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 1232, 693 )
+
+[node name="crate14" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 1309, 693 )
+
+[node name="crate17" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 1771, 770 )
+
+[node name="crate16" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 1848, 770 )
+
+[node name="crate15" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 1925, 770 )
+
+[node name="crate20" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 2002, 770 )
+
+[node name="crate19" parent="Creates" instance=ExtResource( 5 )]
+position = Vector2( 2079, 770 )
+
+[node name="Sprite" parent="." instance=ExtResource( 2 )]
+position = Vector2( 154, 674 )
+
+[node name="CamPlayer" type="Camera2D" parent="Sprite"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+limit_top = 0
+limit_right = 2300
+limit_bottom = 1080
+editor_draw_limits = true
+
+[node name="SFX" type="Node" parent="."]
+script = ExtResource( 12 )
+
+[node name="Level" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 3 )
+bus = "Level"
+
+[node name="Fail" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 199.0
+margin_top = 441.0
+margin_right = 734.0
+margin_bottom = 766.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Intro" type="AnimationPlayer" parent="."]
+autoplay = "Tuto"
+anims/Tuto = ExtResource( 10 )
+
+[node name="Target" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2053.23, 699.545 )
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+script = ExtResource( 11 )
+
+[node name="Start position" type="Position2D" parent="."]
+position = Vector2( 152, 605 )
+
+[node name="CamMap" type="Camera2D" parent="."]
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 2300
+limit_bottom = 1080
+editor_draw_limits = true
+script = ExtResource( 13 )
