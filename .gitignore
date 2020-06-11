@@ -1,8 +1,15 @@
 android/
+<<<<<<< HEAD
 .import/
 *.import
 export.cfg
 export_presets.cfg
+=======
+.import/
+*.import
+export.cfg
+export_presets.cfg
+>>>>>>> 8743513ca77d34c22ac69df71b08a428b3a57938
 *.TMP
 debug.keystore
 save.prs
